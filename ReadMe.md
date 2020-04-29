@@ -12,7 +12,7 @@ After successful installation, we only need to add few codes to set up our self-
 - `model/detector/__init__.py`: add `from .mgan import MGAN`, and add `'MGAN'` in `__all__` list
 - `mmdet/model/mgan_head/`: MGAN brach
 - `mmdet/utilis/`: tools for network calculations
-- `mmdet/models/backbones//vgg.py `: VGG backbone
+- `mmdet/models/backbones/vgg.py `: VGG backbone
 - `configs/mgan.py`: network structure claim, hyperparamter, and directories
 
 Then you can train MGAN network by:
@@ -29,6 +29,6 @@ You can also use our [docker](https://hub.docker.com/repository/docker/justinchi
 
 
 ## Convert your own dataset into COCO style
-ToDo
+The dataset should have the same annotation convention as COCO dataset. For example, for BDD dataset can be converted in this [way](https://github.com/ucbdrive/bdd100k/blob/master/bdd100k/bdd2coco.py).
 ## Visualize attention as heatmap
 ToDo
