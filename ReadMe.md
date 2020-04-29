@@ -15,6 +15,65 @@ After successful installation, we only need to add few codes to set up our self-
 - `mmdet/models/backbones/vgg.py `: VGG backbone
 - `configs/mgan.py`: network structure claim, hyperparamter, and directories
 
+The whole mmdetection files structure looks like:
+```sh
+|-- LICENSE
+|-- README.md
+|-- build
+|-- configs
+|   `-- mgan.py                     # MGAN network structure                         
+|-- data
+|   `-- cityscapes -> $DATASET_DIR  # link to dataset
+|-- demo
+|-- docker
+|-- docs
+|-- mmcv
+|-- mmdet
+|   |-- __init__.py                 # add MGAN class
+|   |-- __pycache__
+|   |-- apis
+|   |-- core
+|   |-- datasets
+|   |-- models
+|   |   |-- __init__.py             # add 'mgan_head' class
+|   |   |-- __pycache__
+|   |   |-- anchor_heads
+|   |   |-- backbones               # add backbone VGG
+|   |   |   |-- __init__.py
+|   |   |   `-- vgg.py
+|   |   |-- bbox_heads
+|   |   |-- builder.py
+|   |   |-- detectors               # add MGAN detectot
+|   |   |   |-- __init__.py
+|   |   |   |-- mgan.py
+|   |   |-- losses
+|   |   |-- mask_heads
+|   |   |-- mgan_heads              # add MGAN head
+|   |   |   |-- __init__.py
+|   |   |   |-- __pycache__
+|   |   |   `-- mgan_head.py
+|   |   |-- necks
+|   |   |-- plugins
+|   |   |-- registry.py
+|   |   |-- roi_extractors
+|   |   |-- shared_heads
+|   |   `-- utils
+|   |-- ops
+|   |-- utils
+|   `-- version.py
+|-- mmdet.egg-info
+|-- models
+|   `-- 50_65.pth                   # checkpoint
+|-- pytest.ini
+|-- requirements
+|-- requirements.txt
+|-- result
+|-- setup.py
+|-- tests
+|-- tools
+`-- work_dirs
+
+```
 Then you can train MGAN network by:
 ```sh
 python tools/train.py configs/mgan.py
