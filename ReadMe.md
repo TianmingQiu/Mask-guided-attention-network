@@ -16,7 +16,7 @@ After successful installation, we only need to add few codes to set up our self-
 - `configs/mgan.py`: network structure claim, hyperparamter, and directories
 
 The whole mmdetection files structure looks like:
-```sh
+```
 |-- LICENSE
 |-- README.md
 |-- build
